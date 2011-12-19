@@ -38,9 +38,10 @@ static NSArray *expressions = nil;
 	expressions = [[NSArray alloc] initWithObjects:
                    @"(\\+)?([0-9]{8,}+)", // phone numbers, 8 or more
                    @"(@[a-zA-Z0-9_]+)", // screen names
-			@"(#[a-zA-Z0-9_-]+)", // hash tags
-			@"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks
-			nil];
+                   @"(#[a-zA-Z0-9_-]+)", // hash tags
+                   @"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks with http://
+                   @"[wW][wW][wW].([a-z]|[A-Z]|[0-9]|[/.]|[~])*", // hyperlinks like www.something.tld
+                   nil];
 }
 
 - (void)handleButton:(id)sender

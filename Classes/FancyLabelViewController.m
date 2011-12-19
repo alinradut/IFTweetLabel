@@ -48,7 +48,7 @@
 	[self.tweetLabel setTextColor:[UIColor whiteColor]];
 	[self.tweetLabel setBackgroundColor:[UIColor clearColor]];
 	[self.tweetLabel setNumberOfLines:0];
-	[self.tweetLabel setText:@"This is a #test of regular expressions with http://example.com links as used in @Twitterrific. HTTP://CHOCKLOCK.COM APPROVED OF COURSE. +21342234 123 123456 1234567"];
+	[self.tweetLabel setText:@"This is a #test of regular expressions with http://example.com links as used in @Twitterrific. HTTP://www.CHOCKLOCK.COM APPROVED OF COURSE. www.google.com +21342234 123 123456 1234567"];
 	[self.tweetLabel setLinksEnabled:self.linksEnabled];
 	[contentView addSubview:self.tweetLabel];
 
