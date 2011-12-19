@@ -39,7 +39,7 @@ extern NSString *IFTweetLabelURLNotification;
 
 @property (nonatomic, retain) UILabel *label;
 
-@property (assign) BOOL linksEnabled;
+@property (nonatomic, assign) BOOL linksEnabled;
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
 - (void)setFrame:(CGRect)frame;

@@ -48,14 +48,14 @@
 	[self.tweetLabel setTextColor:[UIColor whiteColor]];
 	[self.tweetLabel setBackgroundColor:[UIColor clearColor]];
 	[self.tweetLabel setNumberOfLines:0];
-	[self.tweetLabel setText:@"This is a #test of regular expressions with http://example.com links as used in @Twitterrific. HTTP://CHOCKLOCK.COM APPROVED OF COURSE. 0744104747 123 123456 1234567"];
+	[self.tweetLabel setText:@"This is a #test of regular expressions with http://example.com links as used in @Twitterrific. HTTP://CHOCKLOCK.COM APPROVED OF COURSE. +21342234 123 123456 1234567"];
 	[self.tweetLabel setLinksEnabled:self.linksEnabled];
 	[contentView addSubview:self.tweetLabel];
 
 	CGRect frame = CGRectMake(100.0f, applicationFrame.size.height - 40.0f, applicationFrame.size.width - 200.0f, 22.0f);
 	UIButton *switchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect]; // autoreleased
 	[switchButton setFrame:frame];
-	[switchButton setFont:[UIFont boldSystemFontOfSize:16.0f]];
+	[switchButton.titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
 	[switchButton setTitle:@"Switch" forState:UIControlStateNormal];
 /*
 	Code like this can be used to customize the buttons that are placed on top of the label:

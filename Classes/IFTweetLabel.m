@@ -36,7 +36,7 @@ static NSArray *expressions = nil;
 {
 	// setup regular expressions that define where buttons will be created
 	expressions = [[NSArray alloc] initWithObjects:
-                   @"([0-9]{7}+)", // screen names
+                   @"(\\+)?([0-9]{8,}+)", // phone numbers, 8 or more
                    @"(@[a-zA-Z0-9_]+)", // screen names
 			@"(#[a-zA-Z0-9_-]+)", // hash tags
 			@"([hH][tT][tT][pP][sS]?:\\/\\/[^ ,'\">\\]\\)]*[^\\. ,'\">\\]\\)])", // hyperlinks
@@ -82,9 +82,9 @@ static NSArray *expressions = nil;
 		button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; // autoreleased
 	}
 	[button setFrame:frame];
-	[button setFont:self.label.font];
+	[button.titleLabel setFont:self.label.font];
 	[button setTitle:text forState:UIControlStateNormal];
-	[button setLineBreakMode:[self.label lineBreakMode]];
+	[button.titleLabel setLineBreakMode:[self.label lineBreakMode]];
 	[button setTitleColor:self.normalColor forState:UIControlStateNormal];
 	[button setTitleColor:self.highlightColor forState:UIControlStateHighlighted];
 	[button addTarget:self action:@selector(handleButton:) forControlEvents:UIControlEventTouchUpInside];
