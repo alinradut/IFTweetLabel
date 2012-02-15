@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol IFTweetLabelDelegate <NSObject>
+- (void)textWasSelectedWithMatch:(NSString *)match;
+@end
+
 extern NSString *IFTweetLabelURLNotification;
 
 // NOTE: Yeah, it would make more sense to subclass UILabel to do this. But all the
@@ -29,17 +33,16 @@ extern NSString *IFTweetLabelURLNotification;
 	UILabel *label;
 	
 	BOOL linksEnabled;
+	NSObject<IFTweetLabelDelegate> *delegate;
 }
 
 @property (nonatomic, retain) UIColor *normalColor;
 @property (nonatomic, retain) UIColor *highlightColor;
-
 @property (nonatomic, retain) UIImage *normalImage;
 @property (nonatomic, retain) UIImage *highlightImage;
-
 @property (nonatomic, retain) UILabel *label;
-
 @property (nonatomic, assign) BOOL linksEnabled;
+@property (nonatomic, assign) NSObject<IFTweetLabelDelegate> *delegate;
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor;
 - (void)setFrame:(CGRect)frame;
