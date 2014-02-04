@@ -62,7 +62,9 @@ static NSArray *expressions = nil;
 		{
 			if ([match hasPrefix:buttonTitle])
 			{
-				[[NSNotificationCenter defaultCenter] postNotificationName:IFTweetLabelURLNotification object:match];
+				if ([delegate respondsToSelector:@selector(textWasSelectedWithMatch:)]) {
+					[delegate textWasSelectedWithMatch:match];
+				}
 			}
 		}
 	}
